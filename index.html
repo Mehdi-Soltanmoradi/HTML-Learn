@@ -1,159 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="autor" content="Mehdi Soltanmoradi">
     <title>Learn HTML</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        h2 {
-            color: red;
-        }
-        
-        .city {
-            background-color: rgb(138, 165, 16);
-            color: white;
-            border: 2px solid black;
-            margin: 20px;
-            padding: 20px;
-            font-size: large;
-        }
-        
-        .note {
-            font-size: 110%;
-            color: blue;
-            text-align: center;
-        }
-        
-        #myHeader {
-            background-color: rgb(81, 179, 179);
-            color: rgb(59, 66, 56);
-            text-align: center;
-            padding: 40px;
-        }
-        
+
+      .city {
+        background-color: rgb(138, 165, 16);
+        color: white;
+        border: 2px solid black;
+        margin: 20px;
+        padding: 20px;
+        font-size: large;
+      }
+
+      .note {
+        font-size: 110%;
+        color: blue;
+        text-align: center;
+      }
+
+      #myHeader {
+        background-color: rgb(81, 179, 179);
+        color: rgb(59, 66, 56);
+        text-align: center;
+        padding: 40px;
+      }
+
+      * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
     </style>
 
     <script>
-        function myFunction() {
-            var x = document.getElementsByClassName("vali");
-            for (var i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
+      function myFunction() {
+        var x = document.getElementsByClassName("vali");
+        for (var i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
         }
+      }
 
-        function displayResult() {
-            document.getElementById("myHeader").innerHTML = "Have a nice day!";
+      function displayResult() {
+        document.getElementById("myHeader").innerHTML = "Have a nice day!";
+      }
+
+      function myFunct() {
+        document.getElementById("dem").innerHTML = "Hello JavaScript!";
+      }
+
+      function Funct3() {
+        document.getElementById("de").style.fontsize = "35px";
+        document.getElementById("de").style.color = "red";
+        document.getElementById("de").style.background = "yellow";
+      }
+
+      function light(sw) {
+        var pic;
+        if (sw == 0) {
+          pic = "pic_bulboff.gif";
+        } else {
+          pic = "pic_bulbon.gif";
         }
-
-        function myFunct() {
-            document.getElementById("demo").innerHTML = "Date";
-        }
-
+        document.getElementById('myImage').src = pic;
+      }
     </script>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <h2>Ordered List</h2>
     <ol>
-        <li>Coffe</li>
-        <li>Tea</li>
-        <li>Milk</li>
+      <li>Coffe</li>
+      <li>Tea</li>
+      <li>Milk</li>
     </ol>
-    <ol type="I" start="50">
-        <li>Milk</li>
-        <li>Tea</li>
+    <type="I" start="50">
+    <li>Milk</li>
+    <li>Tea</li>
 
-        <h2>List to dar to </h2>
-        <p>in list hast</p>
-        <ol type="A">
-            <li>Coffe</li>
-            <ol type="a">
-                <li>hot</li>
-            </ol>
-        </ol>
-        <h2>Not ordered List</h2>
-        <ul>
-            <li>mono</li>
-            <li>tono</li>
-        </ul>
-        <h2>List Tozihi</h2>
-        <dl>
-            <dt>Coffe</dt>
-            <dd>- black hot drink</dd>
-            <dt>Milk</dt>
-            <dd>- white drink</dd>
-        </dl>
-        <div style="border: 1px solid black;padding: 2px;font-family: 'Times New Roman', Times, serif;">Hello World</div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, quas est rerum itaque atque fuga, consequuntur.</p>
-        <span>Hi World</span>
-        <p>This is element span <span style="border: 1px solid black;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Hi span</span> element span</p>
-        <div style="background-color: black; color: white; padding: 20px;">
-            <h2>Londen</h2>
-            <p style="font-family: 'Times New Roman', Times, serif;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam pariatur ad explicabo quae quo, dolor obcaecati officia fuga nam quam consequatur nulla quibusdam odit, beatae nobis quis quas consectetur dolorem.</p>
-            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel sequi similique placeat, eum minima, aut nihil ratione, dicta illo officia suscipit dignissimos. Illo, ipsam modi impedit nulla est eius et?</p>
-        </div>
-        <h2>The span element</h2>
-        <p> My dad has <span style="color: violet; font-weight: bold;">violet</span> eyes and mother <span style="color: brown; font-weight: bold;">brown</span> eyes.</p>
-        <div class="city">
-            <h2>london</h2>
-            <p>is a England.</p>
-        </div>
-        <div class="city">
-            <h2>France</h2>
-            <p>is a Franch</p>
-        </div>
-        <h1>My <span class="note">Important</span> Heading</h1>
-        <p>This is <span class="note">important</span> text.</p>
+    <h2>List to dar to</h2>
+    <p>in list hast</p>
+    <ol type="A">
+      <li>Coffe</li>
+      <ol type="a">
+        <li>hot</li>
+      </ol>
+    </ol>
+    <h2>Not ordered List</h2>
+    <ul>
+      <li>mono</li>
+      <li>tono</li>
+    </ul>
+    <h2>List Tozihi</h2>
+    <dl>
+      <dt>Coffe</dt>
+      <dd>- black hot drink</dd>
+      <dt>Milk</dt>
+      <dd>- white drink</dd>
+    </dl>
+    <div
+      style="
+        border: 1px solid black;
+        padding: 2px;
+        font-family: 'Times New Roman', Times, serif;
+      "
+    >
+      Hello World
+    </div>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, quas est
+      rerum itaque atque fuga, consequuntur.
+    </p>
+    <span>Hi World</span>
+    <p>
+      This is element span
+      <span
+        style="
+          border: 1px solid black;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        "
+        >Hi span</span
+      >
+      element span
+    </p>
+    <div style="background-color: black; color: white; padding: 20px">
+      <h2>Londen</h2>
+      <p style="font-family: 'Times New Roman', Times, serif">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
+        pariatur ad explicabo quae quo, dolor obcaecati officia fuga nam quam
+        consequatur nulla quibusdam odit, beatae nobis quis quas consectetur
+        dolorem.
+      </p>
+      <p style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel sequi
+        similique placeat, eum minima, aut nihil ratione, dicta illo officia
+        suscipit dignissimos. Illo, ipsam modi impedit nulla est eius et?
+      </p>
+    </div>
+    <h2>The span element</h2>
+    <p>
+      My dad has
+      <span style="color: violet; font-weight: bold">violet</span> eyes and
+      mother <span style="color: brown; font-weight: bold">brown</span> eyes.
+    </p>
+    <div class="city">
+      <h2>london</h2>
+      <p>is a England.</p>
+    </div>
+    <div class="city">
+      <h2>France</h2>
+      <p>is a Franch</p>
+    </div>
+    <h1>My <span class="note">Important</span> Heading</h1>
+    <p>This is <span class="note">important</span> text.</p>
 
-        <h2>The class Attribute</h2>
-        <p>use CSS to Style name "city"</p>
+    <h2>The class Attribute</h2>
+    <p>use CSS to Style name "city"</p>
 
-        <h1 class="city">London</h1>
-        <p>Londen is a big <span class="city">country.</span></p>
-        <br>
+    <h1 class="city">London</h1>
+    <p>Londen is a big <span class="city">country.</span></p>
+    <br />
 
-        <h2>Multiple Classses</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum autem cumque quos nemo magni aut eaque, deserunt nihil dolore, harum facere debitis iste illo doloribus totam! Eius ducimus vitae consequatur?</p>
-        <h3 class="city note">LONDEN</h3>
-        <h3 class="city">Paris</h3>
+    <h2>Multiple Classses</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum autem
+      cumque quos nemo magni aut eaque, deserunt nihil dolore, harum facere
+      debitis iste illo doloribus totam! Eius ducimus vitae consequatur?
+    </p>
+    <h3 class="city note">LONDEN</h3>
+    <h3 class="city">Paris</h3>
 
-        <h2>Use of The class Attribute in JavaScript</h2>
-        <p>Click the button to hide all elements with class name "vali":</p>
+    <h2>Use of The class Attribute in JavaScript</h2>
+    <p>Click the button to hide all elements with class name "vali":</p>
 
-        <button onclick="myFunction()">Hide elements</button>
+    <button onclick="myFunction()">Hide elements</button>
 
-        <h2 class="vali">London</h2>
-        <p>London is the capital of England.</p>
+    <h2 class="vali">London</h2>
+    <p>London is the capital of England.</p>
 
-        <h2 class="vali">Paris</h2>
-        <p>Paris is the capital of France.</p>
+    <h2 class="vali">Paris</h2>
+    <p>Paris is the capital of France.</p>
 
-        <h2 class="vali">Tokyo</h2>
-        <p>Tokyo is the capital of Japan.</p>
-        <p style="border: 10px solid rgb(128, 0, 122);"></p>
+    <h2 class="vali">Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+    <p style="border: 10px solid rgb(128, 0, 122)"></p>
 
-        <h2>The id Attribute</h2>
-        <p style="font-size: large;">use the style with "myHeader":</p>
+    <h2>The id Attribute</h2>
+    <p style="font-size: large">use the style with "myHeader":</p>
 
-        <h1 id="myHeader">Hello World!</h1>
-        <button onclick="displayResult()">Change text</button>
+    <h1 id="myHeader">Hello World!</h1>
+    <button onclick="displayResult()">Change text</button>
 
-        <h2>Iframe - Target for a Link</h2>
-        
-        <iframe src="demo_iframe.htm" name="iframe_a" height="200px" width="50%" title="Iframe Example"></iframe>
-        <p><a href="https://www.w3schools.com" target="Ifarme_a">w3Schools.com</a></p>
+    <h2>Iframe - Target for a Link</h2>
 
-        <h1>My First JavaScript </h1>
+    <iframe
+      src="demo_iframe.html"
+      name="iframe_a"
+      height="200px"
+      width="50%"
+      title="iframe Example"></iframe>
+    
+    <p>
+      <a href="https://www.W3schools.com" target="ifarme_a">W3Schools.com</a>
+    </p>
 
-        <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
-        Click me to display Date Time.</button>
+    <h1>My First JavaScript</h1>
 
-        <p id="demo"></p>
+    <button
+      type="button"
+      onclick="document.getElementById('demo').innerHTML = Date()"
+    >
+      Click me to display Date Time.
+    </button>
 
-        </body>
+    <p id="demo"></p>
 
+    <button type="button" onclick="myFunct()">Click me!</button>
+    <p id="dem">this is a demonstration</p>
+
+    <button type="button" onclick="Funct3()">Click Funct3!</button>
+    <p id="de">JavaScript can change the style of an HTML element.</p>
+
+    <h1>My First JavaScript</h1>
+    <p>Here, a JavaScript change</p>
+
+    <img style="margin: 10px 25px; border: 2px solid violet;" id="myImage" src="pic_bulboff.gif" width="100" height="180">
+
+    <p>
+      <button type="button" onclick="light(1)">light on</button>
+      <button type="button" onclick="light(0)">light off</button>
+    </p>
+
+    <img src="/picture/image.jpg" alt="Mountain" style="width: 250px;">
+    <br>
+    <hr>
+
+    <p><img src="/picture/stickman.gif" width="24" height="39" alt="stickman"> - Notice that we have only specified a relative address for the image. Since we have specified a base URL in the head section, the browser will look for the image at "https://www.w3schools.com/images/stickman.gif".
+    </p>
+
+    <p><a href="https://www.w3schools.com/tags/tag_base.asp">HTML base tag</a> - Notice that the link opens in a new window, even if it has no target="_blank" attribute. This is because the target attribute of the base element is set to "_blank".</p>
+
+    <br>
+
+    <h2>CSS Layout Float</h2>
+<p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.</p>
+<p>Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML Responsive.)</p>
+
+<header>
+  <h2>Cities</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">London</a></li>
+      <li><a href="#">Paris</a></li>
+      <li><a href="#">Tokyo</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>London</h1>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+  </article>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
+
+
+
+
+  </body>
 </html>
