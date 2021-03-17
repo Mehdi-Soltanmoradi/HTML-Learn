@@ -32,6 +32,7 @@
             text-align: center;
             padding: 40px;
         }
+        
     </style>
 
     <script>
@@ -41,6 +42,15 @@
                 x[i].style.display = "none";
             }
         }
+
+        function displayResult() {
+            document.getElementById("myHeader").innerHTML = "Have a nice day!";
+        }
+
+        function myFunct() {
+            document.getElementById("demo").innerHTML = "Date";
+        }
+
     </script>
 
 </head>
@@ -127,10 +137,23 @@
         <p style="border: 10px solid rgb(128, 0, 122);"></p>
 
         <h2>The id Attribute</h2>
-        <p>use the style with "myHeader":</p>
+        <p style="font-size: large;">use the style with "myHeader":</p>
 
-        <h1 id="myHeader">My Header</h1>
-        <p>emshab</p>
-</body>
+        <h1 id="myHeader">Hello World!</h1>
+        <button onclick="displayResult()">Change text</button>
+
+        <h2>Iframe - Target for a Link</h2>
+        
+        <iframe src="demo_iframe.htm" name="iframe_a" height="200px" width="50%" title="Iframe Example"></iframe>
+        <p><a href="https://www.w3schools.com" target="Ifarme_a">w3Schools.com</a></p>
+
+        <h1>My First JavaScript </h1>
+
+        <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+        Click me to display Date Time.</button>
+
+        <p id="demo"></p>
+
+        </body>
 
 </html>
